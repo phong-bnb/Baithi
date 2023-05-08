@@ -3,16 +3,16 @@ var Student = require("./student").Student;
 var readlineSync = require('readline-sync');
 var managementStudent = new ManageStudent();
 var repeat = true;
-var nunStudent = readlineSync.question("nhap so luong sinh vien");
+var nunStudent = readlineSync.question("nhap so luong sinh vien: ");
 for (var i = 0; i < nunStudent; i++) {
     console.log("sinh vien thu ".concat(i + 1));
-    var idStudent = readlineSync.question("id: ");
-    var nameStudent = readlineSync.question("name: ");
-    var classStudent = readlineSync.question("className: ");
-    var addressStudent = readlineSync.question("homeTown: ");
-    var scoreStudent = +readlineSync.question("score: ");
-    var hobbies = readlineSync.question("hobbies: ");
-    var student1 = new Student(idStudent, nameStudent, classStudent, addressStudent, scoreStudent, hobbies);
+    var idStudent = readlineSync.question("idStudent: ");
+    var nameStudent = readlineSync.question("nameStudent: ");
+    var classStudent = readlineSync.question("classStudent: ");
+    var addressStudent = readlineSync.question("addressStudent: ");
+    var scoreStudent = +readlineSync.question("scoreStudent: ");
+    var interset = readlineSync.question("interset: ");
+    var student1 = new Student(idStudent, nameStudent, classStudent, addressStudent, scoreStudent, interset);
     managementStudent.addStudent(student1);
 }
 do {
@@ -26,19 +26,19 @@ do {
         }
         case 2: {
             var findName = readlineSync.question("nhap ten can tim: ");
-            console.log("=================Search for students by name=================");
+            console.log("=================Search students by name=================");
             managementStudent.searchStudentByName(findName);
             break;
         }
         case 3: {
             var findId = readlineSync.question("nhap id sinh vien muon sua: ");
-            var editId = readlineSync.question("id: ");
-            var editName = readlineSync.question("name: ");
-            var editClassName = readlineSync.question("className: ");
-            var editAddress = readlineSync.question("homeTown: ");
+            var editId = readlineSync.question("idStudent: ");
+            var editName = readlineSync.question("nameStudent: ");
+            var editClassName = readlineSync.question("classStudent: ");
+            var editAddress = readlineSync.question("addressStudent: ");
             var editScore = +readlineSync.question("score: ");
-            var editInterset = readlineSync.question("hobbies: ");
-            console.log("=================Update a student's information=================");
+            var editInterset = readlineSync.question("interset: ");
+            console.log("=================Update student's information=================");
             managementStudent.updateStudent(findId, new Student(editId, editName, editClassName, editAddress, editScore, editInterset));
             break;
         }

@@ -24,7 +24,7 @@ do {
             3. updateStudent
             4. deleteStudent
 `)
-    let option = readlineSync.keyInSelect("nhap (1/4): ")
+    let option = readlineSync.question("nhap (1/4): ")
     switch (option) {
         case 1: {
             console.log("===============listStudent===============")
