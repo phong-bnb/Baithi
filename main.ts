@@ -4,16 +4,16 @@ const {Student} = require("./student");
 let readlineSync = require('readline-sync')
 let managementStudent = new ManageStudent();
 let repeat = true
-let nunStudent = readlineSync.question("nhap so luong sinh vien")
+let nunStudent = readlineSync.question("nhap so luong sinh vien: ")
 for (let i = 0; i < nunStudent; i++) {
     console.log(`sinh vien thu ${i + 1}`)
-    let idStudent = readlineSync.question("id: ")
-    let nameStudent = readlineSync.question("name: ")
-    let classStudent = readlineSync.question("className: ")
-    let addressStudent = readlineSync.question("homeTown: ")
-    let scoreStudent = +readlineSync.question("score: ")
-    let hobbies = readlineSync.question("hobbies: ")
-    let student1 = new Student(idStudent, nameStudent, classStudent, addressStudent, scoreStudent, hobbies);
+    let idStudent = readlineSync.question("idStudent: ")
+    let nameStudent = readlineSync.question("nameStudent: ")
+    let classStudent = readlineSync.question("classStudent: ")
+    let addressStudent = readlineSync.question("addressStudent: ")
+    let scoreStudent = +readlineSync.question("scoreStudent: ")
+    let interset = readlineSync.question("interset: ")
+    let student1 = new Student(idStudent, nameStudent, classStudent, addressStudent, scoreStudent, interset);
     managementStudent.addStudent(student1);
 }
 do {
@@ -33,7 +33,7 @@ do {
         }
         case 2: {
             let findName = readlineSync.question("nhap ten can tim: ")
-            console.log("=================Search for students by name=================")
+            console.log("=================Search students by name=================")
             managementStudent.searchStudentByName(findName);
             break
         }
@@ -45,7 +45,7 @@ do {
             let editAddress = readlineSync.question("addressStudent: ")
             let editScore = +readlineSync.question("score: ")
             let editInterset = readlineSync.question("interset: ")
-            console.log("=================Update a student's information=================")
+            console.log("=================Update student's information=================")
             managementStudent.updateStudent(findId, new Student(editId, editName, editClassName, editAddress, editScore, editInterset));
             break
         }
